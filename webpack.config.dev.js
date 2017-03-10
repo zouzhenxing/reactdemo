@@ -1,13 +1,13 @@
 const webpack = require('webpack');
 
 module.exports = {
-    devtool: "source-map",
     entry :{
-        index: __dirname.concat('/src/index.jsx')
+        index: __dirname.concat('/src/index.jsx'),
+        vendor: ['react', 'react-dom']
     },
     output: {
         path : __dirname.concat('/app/js'),
-        filename : 'index.js'
+        filename : '[name].js'
     },
     module : {
         loaders : [
@@ -20,5 +20,11 @@ module.exports = {
                 }
             }
         ]
-    }
+    },
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            names: ['vendor', 'manifest'],
+        }),
+        new webpack.optimize.UglifyJsPlugin()
+    ]
 };
