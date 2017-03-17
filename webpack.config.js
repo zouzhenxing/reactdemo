@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     devtool: "source-map",
@@ -14,11 +15,15 @@ module.exports = {
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader',
-                query: {
-                    presets: ['es2015','react']
-                }
+                loader: 'babel-loader?presets[]=es2015&presets[]=react'
+            },
+            {
+                test: /\.css/,
+                loader: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader' })
             }
         ]
-    }
+    },
+    plugins: [
+        new ExtractTextPlugin('../css/build.min.css')
+    ]
 };

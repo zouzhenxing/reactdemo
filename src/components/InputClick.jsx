@@ -1,20 +1,26 @@
-import React from 'react';
+import React from "react";
 
 class InputClick extends React.Component {
-    constructor(props) {
+    constructor (props) {
+
         super(props);
+
     }
 
-    handleClick(event) {
+    handleClick (event) {
+
         console.log(event);
         this.refs.myinput.focus();
+
     }
 
-    render() {
+    render () {
+
         return <div>
             <input type="text" ref="myinput"/>
             <button onClick={this.handleClick.bind(this)}>click me</button>
         </div>;
+
     }
 }
 

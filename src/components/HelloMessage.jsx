@@ -1,21 +1,21 @@
-import React from 'react';
+import React from "react";
 
 class HelloMessage extends React.Component {
-    constructor(props) {
+    constructor (props) {
+
         super(props);
+
     }
 
-    render() {
+    render () {
+
         return <h1>hello {this.props.name}</h1>;
+
     }
 }
 
-HelloMessage.propTypes = {
-    name : React.PropTypes.string,
-}
+HelloMessage.propTypes = {"name": React.PropTypes.string};
 
-HelloMessage.defaultProps = {
-    name : '小样'
-}
+HelloMessage.defaultProps = {"name": "小样"};
 
-export default HelloMessage
+export default HelloMessage;

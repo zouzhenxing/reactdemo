@@ -1,11 +1,14 @@
-import React from 'react';
+import React from "react";
 
 class NodeList extends React.Component {
-    constructor(props) {
+    constructor (props) {
+
         super(props);
+
     }
 
-    render() {
+    render () {
+
         return <ul>
             {
                 this.props.children.map((v)=> {
@@ -13,7 +16,8 @@ class NodeList extends React.Component {
                 })
             }
         </ul>;
+
     }
 }
 
-export default NodeList
+export default NodeList;

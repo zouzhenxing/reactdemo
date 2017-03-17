@@ -1,25 +1,27 @@
-import React from 'react';
+import React from "react";
 
 class FormTest extends React.Component {
-    constructor(props) {
+    constructor (props) {
+
         super(props);
-        this.state = {
-            text : ''
-        };
+        this.state = {"text": ""};
+
     }
 
-    textChange(event) {
-        this.setState({
-            text : event.target.value
-        });
+    textChange (event) {
+
+        this.setState({"text": event.target.value});
+
     }
 
-    render() {
+    render () {
+
         return <p>
             <input type="text" onChange={this.textChange.bind(this)}/>
-            <br/>
-            <span>Hello {this.state.text}</span>
+            <br />
+            <span style={{"fontSize": "20px"}}>Hello {this.state.text}</span>
         </p>;
+
     }
 }
 

@@ -12,7 +12,7 @@ switch (command) {
         }
 
         let temp = fs.readFileSync("./script/classtemp.temp");
-        fs.writeFileSync("./src/components/".concat(classname,'.jsx'),ejs.render(temp.toString(),{
+        fs.writeFileSync("./src/wxcomp/".concat(classname,'.jsx'),ejs.render(temp.toString(),{
             classname,
         }));
 
